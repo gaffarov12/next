@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+        }
+
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+ 
+<body>
+
+    <h1>he : <span id="ism"></span></h1>
+    <input id="input" type="text" placeholder="ismni kiriting">
+    <button id="musr">delete</button>
+
+
+
+
+    <script>
+          const ism = document.getElementById('ism')
+        const input = document.getElementById('input')
+        const musr = document.getElementById('musr')
+
+        input.oninput=(e)=>{
+      
+        ism.textContent =e.target.value
+        }
+
+        musr.onclick=()=>{
+              input.value = ''
+            ism.textContent = ''
+        }
+
+    </script>
+</body>
+
+</html>
