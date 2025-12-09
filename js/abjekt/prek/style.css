@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.boshlanish {
+    background-image: url(https://ik.imagekit.io/serenity/ByteofDev/Blog_Content_Images/tr:f-jpg/speed_up_images_original_R8oje17ew);
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 500px;
+
+    
+}   
+a{
+text-decoration: none;
+color: black;
+ 
+
+}
+.ahref{
+       display: flex;
+    gap: 50px;
+}
+
+button{
+    background-color: rgb(6, 6, 255);
+    width: 80px;
+    height: 30px;
+}
+.aa{
+    display: flex;
+    
+}
+h6{
+    text-align: center;
+}
+.sitrig{
+margin: 130px;
+}
+.divlar{
+    display: flex;
+    border: 2px solid red;
+    height: 200px;
+    margin: 90px;
+   
+    position: absolute;
+    top: 50%;
+}

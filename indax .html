@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kunlik jadval</title>
+    <style>
+        :root {
+            font-family: Inter, system-ui, Arial, sans-serif
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #f3f6fb;
+            padding: 20px
+        }
+
+        .card {
+            width: 100%;
+            max-width: 640px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 24px rgba(30, 40, 50, 0.06);
+            padding: 18px
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: 20px
+        }
+
+        .controls {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px
+        }
+
+        input[type=text] {
+            flex: 1;
+            padding: 10px 12px;
+            border: 1px solid #dbe6f2;
+            border-radius: 8px;
+            font-size: 15px
+        }
+
+        button {
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: none;
+            background: #2563eb;
+            color: white;
+            font-weight: 600;
+            cursor: pointer
+        }
+
+        button:active {
+            transform: translateY(1px)
+        }
+
+        .note {
+            font-size: 13px;
+            color: #5b6775;
+            margin-bottom: 8px
+        }
+
+        .schedule {
+            margin-top: 8px;
+            border-top: 1px dashed #e6eef8;
+            padding-top: 12px
+        }
+
+        .empty {
+            color: #7b8694;
+            font-size: 14px
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .table td {
+            padding: 8px 6px;
+            border-bottom: 1px solid #f1f6fb
+        }
+
+        .time {
+            width: 88px;
+            font-weight: 600
+        }
+
+        @media(max-width:480px) {
+            h1 {
+                font-size: 18px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h1>Kunlik jadvalni ko'rsatish</h1>
+        <div class="note">Kun nomini kiriting (masalan: dushanba, seshanba, chorshanba, payshanba, 'juma', shanba,
+            yakshanba) yoki qisqacha: d, s, ch, p, j, sh, y</div>
+        <div class="controls">
+            <input id="dayInput" type="text" placeholder="Kun: (masalan: dushanba)" aria-label="Kunni kiriting" />
+            <button id="showBtn">Ko'rsat</button>
+        </div>
+
+        <div id="output" class="schedule" aria-live="polite"></div>
+    </div>
+
+    <script>
+        // Misol uchun har bir kun uchun jadval obyekti (siz o'zgartirishingiz mumkin)
+        const schedules = {
+            dushanba: [
+                ['08:00 - 09:00', 'Matematika'],
+                ['09:15 - 10:15', 'Fizika'],
+                ['10:30 - 11:15', "Informatika"],
+                ['11:30 - 12:15', 'Biologiya']
+            ],
+            seshanba: [
+                ['08:00 - 09:00', 'Kimyo'],
+                ['09:15 - 10:15', 'Tarix'],
+                ['10:30 - 11:15', 'Adabiyot'],
+                ['11:30 - 12:15', 'Ingliz tili']
+            ],
+            chorshanba: [
+                ['08:00 - 09:00', 'Matematika'],
+                ['09:15 - 10:15', 'Fizika laboratoriyasi'],
+                ['10:30 - 11:15', 'Texnologiya'],
+                ['11:30 - 12:15', 'Jismoniy tarbiya']
+            ],
+            payshanba: [
+                ['08:00 - 09:00', 'Geografiya'],
+                ['09:15 - 10:15', 'Kimyo amaliyoti'],
+                ['10:30 - 11:15', 'Rus tili'],
+                ['11:30 - 12:15', 'Informatika']
+            ],
+            juma: [
+                ['08:00 - 09:00', 'Matematika darslari'],
+                ['09:15 - 10:15', 'Fizika — nazariy'],
+                ['10:30 - 11:15', 'Tanlov fanlari / loyihalar']
+            ],
+            shanba: [
+                ['09:00 - 10:00', 'Qayta nazorat / konsultatsiya'],
+                ['10:15 - 11:00', 'Amaliy mashgulot']
+            ],
+            yakshanba: []
+        };
+
+        const input = document.getElementById('dayInput');
+        const btn = document.getElementById('showBtn');
+        const output = document.getElementById('output');
+
+        btn.onclick = () => {
+            if (input.value == 'dushanba') {
+                console.log(
+                    ['08:00 - 09:00', 'Matematika'],
+                    ['09:15 - 10:15', 'Fizika'],
+                    ['10:30 - 11:15', "Informatika"],
+                    ['11:30 - 12:15', 'Biologiya'])
+            }
+            else if (input.value == 'seshanba') {
+                console.log(
+                    ['08:00 - 09:00', 'Kimyo'],
+                    ['09:15 - 10:15', 'Tarix'],
+                    ['10:30 - 11:15', 'Adabiyot'],
+                    ['11:30 - 12:15', 'Ingliz tili']
+                )
+            }
+            else if (input.value == 'chorshanba') {
+                console.log(
+                    ['08:00 - 09:00', 'Matematika'],
+                    ['09:15 - 10:15', 'Fizika laboratoriyasi'],
+                    ['10:30 - 11:15', 'Texnologiya'],
+                    ['11:30 - 12:15', 'Jismoniy tarbiya']
+                )
+            }
+            
+                  else if (input.value == '  payshanba') {
+                console.log(
+               ['08:00 - 09:00', 'Geografiya'],
+                ['09:15 - 10:15', 'Kimyo amaliyoti'],
+                ['10:30 - 11:15', 'Rus tili'],
+                ['11:30 - 12:15', 'Informatika']
+                )
+            }
+            
+                  else if (input.value == 'juma') {
+                console.log(
+                        ['08:00 - 09:00', 'Matematika darslari'],
+                ['09:15 - 10:15', 'Fizika — nazariy'],
+                ['10:30 - 11:15', 'Tanlov fanlari / loyihalar']
+                )
+            }
+            
+                  else if (input.value == 'shanba') {
+                console.log(
+                            ['09:00 - 10:00', 'Qayta nazorat / konsultatsiya'],
+                ['10:15 - 11:00', 'Amaliy mashgulot']
+                )
+            }
+            
+
+        }
+    </script>
+</body>
+
+</html>

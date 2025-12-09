@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: pink;
+    height: 100vh;
+ display: flex;
+    align-items: center;
+}
+
+.nnn{
+  
+    display: flex;
+    gap: 20px;
+        display: flex;
+justify-content: center;
+align-items: center;
+}
+.sss{
+        border: 2px solid red ;
+height: 100px;
+width: 200px;
+border-radius: 14px;            
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 19px;
+}
+h1{
+        display: flex;
+justify-content: center;
+align-items: center;
+}

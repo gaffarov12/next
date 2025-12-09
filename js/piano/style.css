@@ -1,0 +1,38 @@
+ *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+ }
+
+
+ img{
+
+    border-radius: 10px;
+    object-fit: cover;  
+    width: 100%;
+ }
+ nav{
+    display: flex;
+    justify-content: space-between;
+
+ }
+ button{
+    width: 100px;
+    height: 65px;
+ }
+
+
+.albom{
+
+   column-count: 4   ;
+   gap: 20px;
+   margin-left: 2.5%;
+   margin-top: 20px;
+}
+.albom img{
+   transition: 0.1s;
+}
+.albom img:hover{
+   opacity: 0.9;
+}

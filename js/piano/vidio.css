@@ -1,0 +1,18 @@
+ video{
+   width: 100%;
+ }
+
+ .vidi{
+column-count: 4;
+
+    
+
+ }
+  button{
+    width: 100px;
+    height: 65px;
+ }
+.yuy{
+    display: flex;
+    gap: 700px;
+}

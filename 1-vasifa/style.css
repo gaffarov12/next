@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.navbar{
+    background-image: url(https://orionagd.pl/data/include/img/news/1643991347.webp);
+}
+.cass{
+    border: 2px solid white;
+    color: white;
+    padding: 3px  18px;
+    border-radius: 10px;
+    display: inline-block;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>salom</h1>
+    <input type="text" name="" id="newvalue">
+    <button id="add">add</button>
+    <h3 id="fruit"></h3>
+
+    <script>
+
+        const fruit = document.getElementById('fruit');
+        const newvalue = document.getElementById('newvalue');
+        const add = document.getElementById('add');
+
+
+        let fruits = ['olma', 'anor', 'nok', 'kwi', 'uzum', 'qulupnay', , '43', 3, 4, 5, 56, 6];
+
+
+        const getfruits = () => {
+            fruit.textContent = ''
+            fruits.map((item) => {
+                console.log(item)
+                fruit.textContent += ` ${item}`
+
+            })
+        }
+
+        getfruits()
+
+        add.onclick = () => {
+            fruits.push(newvalue.value)
+            console.log(fruits)
+            getfruits()
+            newvalue.value = ''
+
+        }
+
+    </script>
+</body>
+
+</html>

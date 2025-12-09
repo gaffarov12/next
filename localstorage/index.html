@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>Klaviatura bosishda nom chiqarish</title>
+</head>
+<body>
+
+<h2>Bosilgan tugma: <span id="keyName">—</span></h2>
+
+<script>
+    document.addEventListener("keydown", function(event) {
+        // Bosilgan tugma nomini olamiz
+        const key = event.key;
+
+        // HTMLga chiqarish
+        document.getElementById('keyName').textContent = key;
+    });
+</script>
+
+</body>
+</html>
+
+    <script src="./lokastoish.js"></script>
+</body>
+</html>

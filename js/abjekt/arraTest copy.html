@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>maktablar</h1>
+<input type="text"  id="maktablar">
+    <button id="add">qo'shish</button>
+    <h3 id="fruit"></h3>
+
+    <script>
+
+        const newvalue = document.getElementById('maktablar');
+        const add = document.getElementById('add');
+
+
+        let fruits = ['18 dimi ', '48 maktab', '56maktab',  '1maktab'];
+
+
+        const getfruits = () => {
+            fruit.textContent = ''
+            fruits.map((item) => {
+                console.log(item)
+                fruit.textContent += ` ${item}`
+
+            })
+        }
+
+        getfruits()
+
+        add.onclick = () => {
+            fruits.push(newvalue.value)
+            console.log(fruits)
+            getfruits()
+            newvalue.value = ''
+
+        }
+
+    </script>
+</body>
+
+</html>
